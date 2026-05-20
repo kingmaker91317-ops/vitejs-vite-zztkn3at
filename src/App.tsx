@@ -7,12 +7,12 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { auth } from "./firebase";
+import { auth } from './firebase';
 
 function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<any>(null);
 
   const register = async () => {
     try {
@@ -24,7 +24,7 @@ function App() {
 
       setUser(result.user);
       alert("Register Success");
-    } catch (err) {
+    } catch (err: any) {
       alert(err.message);
     }
   };
@@ -39,7 +39,7 @@ function App() {
 
       setUser(result.user);
       alert("Login Success");
-    } catch (err) {
+    } catch (err: any) {
       alert(err.message);
     }
   };
